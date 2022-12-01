@@ -1,17 +1,17 @@
 import java.util.*;
 public class customerInfo {
     private String username = null;
-    string firstName = null;
-    string lastName = null;
+    String firstName = null;
+    String lastName = null;
     private String password = null;
-    private int SSN = null;
+    private int ssn = null;
     private String address = null;
     private String state = null;
     private String email = null;
     private String securityQuestion = null;
     private String securityAnswer = null;
 
-    Reg(String firstN, String lastN, String user, String password, String address,int zip, String state, String email, String ssn, String question, String answer){
+    Reg void (String firstN, String lastN, String user, String password, String address,int zip, String state, String email, String ssn, String question, String answer){
 		    firstName = firstN;
 		    lastName = lastN;
 		    username = user;
@@ -86,10 +86,10 @@ public class customerInfo {
 	}
 
 
-	String getSsn() {
+	int getSsn() {
 		return ssn;
 	}
-	void setSsn(String ssn) {
+	void setSsn(int ssn) {
 		this.ssn = ssn;
 	}
 
