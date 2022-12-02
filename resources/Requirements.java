@@ -25,21 +25,31 @@ Log out/ log in
 Main Menu
     Always have an option to return to main menu
 
-Code Requirements:
-Must be in Java
-Has at least 4 different classes
-At least 3 concepts of encapsulation, inheritance, polymorphism, or composition
-Abstract class and Interfaces must be present - at least 1 of each
-Proper comments
-Should not crash
-Database programming part done using JDBC
-Oracle, MySQL, PostgreSQL, or SQL server can be used as RDBMS
-
-Documentation:
-At least 5 pages
-Briefly explains requirements + specification of project
-Shows class diagram using UML
-Shows the Data Model (Tables + Primary Keys + Foreign Keys)
-Briefly explains functionality and flow of the program
-
 */
+
+
+
+/*
+ Code requirements:
+ 
+ Inheritance: MET by Admins, Customer, Users (classes inherit other classes)
+ Encapsulation: wrapping variables & methods together in a single unit (making it private & using providing public setter & getter methods to modify/view the variables)
+ Polymorphism: different implementations of a method
+ Composition: has-a relationship between objects + implemented using instance variables (declared in class but outside of constructors/methods/blocks)
+ Abstract class: essential details are displayed 
+ Interfaces: MET by Users
+ JDBC:
+ RDBMC: MET by MYSQL
+ Classes: need at least 4
+ Proper Comments
+ */
+
+/*
+ Documentation Requirements:
+ 
+ Length: At least 5 pages
+ Briefly explains requirements + Specifications of project
+ Shows class diagram using UML
+ Shows the Data Mosel (Tables + Primary Keys + Foreign Keys)
+ Briefly explains functionality and flow of the program  
+ */
