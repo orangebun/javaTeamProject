@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Austin
- *
- */
-module javaTeamProject {
-}
