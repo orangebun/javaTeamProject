@@ -34,19 +34,24 @@ import java.util.ResourceBundle;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 
-
-
-public class LogInContoller {
+public class ResetPasswordController {
+	
+	public TextField answ;
+	public TextField use;
+	public TextField pass1;
+	public TextField pass2;
+	
 	private Stage stage;
 	private Scene scene;
-	private Parent root; 
+	private Parent root;
 	
-
-	public TextField TextFieldUser1;
-	public TextField TextFieldPassword1;
-	
-	
-
+	public void switchToSplashScreen(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 	
 	public void switchToMainPage(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
@@ -56,65 +61,45 @@ public class LogInContoller {
 		stage.show();
 	}
 	
-	public void switchToRegistration(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Registration.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
-	public void switchToSecurityQuestions(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
-	
-	public void handleLoginClickPopup(ActionEvent event) {
+	public void handleResetPassword(ActionEvent event){
 		boolean login;
-		String user = TextFieldUser1.getText();
-		String pass = TextFieldPassword1.getText();
-		System.out.println(user);
+		
 		login = true;
 		
 		if(login) {
-			try{
+			try {
 				switchToMainPage(event);
-			} catch(IOException ex) {
-				System.out.println("OOF");
+			} catch(IOException ex){
+				System.out.println("shux");
 			}
-		} else{
-			// relaunch window close stage
-			//close program
-			
+		} else {
+			try {
+				switchToSplashScreen(event);
+			} catch(IOException ex){
+				System.out.println("shux");
+			}
 		}
+	}
+	
+	
+	public void handleExit(ActionEvent event){
+		boolean login;
 		
+		login = true;
 		
-	}
-	
-	public void handleRegisterClick(ActionEvent event) {
-		try{
-			switchToRegistration(event);
-		} catch(IOException ex){
-			System.out.println("Shux");
+		if(login) {
+			try {
+				switchToMainPage(event);
+			} catch(IOException ex){
+				System.out.println("shux");
+			}
+		} else {
+			try {
+				switchToSplashScreen(event);
+			} catch(IOException ex){
+				System.out.println("shux");
+			}
 		}
 	}
-	
-	
-	public void handleForgotPasswordClick(ActionEvent event) {
-		try{
-			switchToSecurityQuestions(event);
-		} catch(IOException ex){
-			System.out.println("Shux");
-		}
-	}
-	
-	
-	
-	
-	
-	
+
 }

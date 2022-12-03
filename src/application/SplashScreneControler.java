@@ -1,6 +1,7 @@
 package application;
 
 import javafx.application.Application;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
@@ -28,9 +29,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.io.IOException;
 import javafx.scene.Node;
+import javafx.fxml.Initializable;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
-public class SceneControler {
+public class SplashScreneControler implements Initializable{
 	
+	ImageView image1;
+	
+	public void initialize(URL location, ResourceBundle resources) {
+		//Image im1 = new Image("Main_image.png");
+		//image1.setImage(im1);
+	}
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
@@ -73,7 +85,7 @@ public class SceneControler {
 	}
 	
 	public void switchToSecurityQuestions(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("SecurityQuestions.fxml"));
+		root = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -85,7 +97,13 @@ public class SceneControler {
 		String user = TextFieldUser.getText();
 		String pass = TextFieldPassword.getText();
 		System.out.println(user);
-		login = false;
+		
+		if(user.equals("1234")) {
+			login = false;
+		} else {
+			login = true;
+		}
+		
 		
 		if(login) {
 			try{
@@ -95,14 +113,25 @@ public class SceneControler {
 			}
 		} else{
 			
+			try{
+				switchToLogIn(event);
+			} catch(IOException ex) {
+				System.out.println("OOF");
+			}
+			
 			//FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));	
 			//root = loader.load();
-			
-			
-		}
-		
-		
+		}	
 	}
+	
+	public void handlePasswordReset(ActionEvent event) {
+		try{
+			switchToSecurityQuestions(event);
+		} catch(IOException ex){
+			System.out.println("Shux");
+		}
+	}
+	
 	
 	
 	

@@ -1,6 +1,7 @@
 package application;
 
 import javafx.application.Application;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
@@ -34,30 +35,16 @@ import java.util.ResourceBundle;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 
+public class MainController {
 
-
-public class LogInContoller {
+	
+	
 	private Stage stage;
 	private Scene scene;
-	private Parent root; 
+	private Parent root;
 	
-
-	public TextField TextFieldUser1;
-	public TextField TextFieldPassword1;
-	
-	
-
-	
-	public void switchToMainPage(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
-	public void switchToRegistration(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Registration.fxml"));
+	public void switchToSplashScreen(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -72,39 +59,15 @@ public class LogInContoller {
 		stage.show();
 	}
 	
-	
-	public void handleLoginClickPopup(ActionEvent event) {
-		boolean login;
-		String user = TextFieldUser1.getText();
-		String pass = TextFieldPassword1.getText();
-		System.out.println(user);
-		login = true;
-		
-		if(login) {
-			try{
-				switchToMainPage(event);
-			} catch(IOException ex) {
-				System.out.println("OOF");
-			}
-		} else{
-			// relaunch window close stage
-			//close program
-			
-		}
-		
-		
-	}
-	
-	public void handleRegisterClick(ActionEvent event) {
+	public void handleSignOut(ActionEvent event) {
 		try{
-			switchToRegistration(event);
+			switchToSplashScreen(event);
 		} catch(IOException ex){
 			System.out.println("Shux");
 		}
 	}
 	
-	
-	public void handleForgotPasswordClick(ActionEvent event) {
+	public void handlePasswordReset(ActionEvent event) {
 		try{
 			switchToSecurityQuestions(event);
 		} catch(IOException ex){
@@ -113,8 +76,6 @@ public class LogInContoller {
 	}
 	
 	
-	
-	
-	
-	
+
+
 }

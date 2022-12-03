@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<TitledPane animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" text="Log In Attempt Failed" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<TitledPane animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" text="Log In Attempt Failed" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LogInContoller">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
@@ -18,12 +18,12 @@
                <children>
                   <VBox prefHeight="77.0" prefWidth="135.0">
                      <children>
-                        <TextField prefHeight="25.0" prefWidth="90.0" promptText="Username">
+                        <TextField fx:id="TextFieldUser1" prefHeight="25.0" prefWidth="90.0" promptText="Username">
                            <VBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Password">
+                        <TextField fx:id="TextFieldPassword1" promptText="Password">
                            <VBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </VBox.margin>
@@ -32,7 +32,7 @@
                   </VBox>
                   <VBox prefHeight="77.0" prefWidth="113.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Log In">
+                        <Button mnemonicParsing="false" onAction="#handleLoginClickPopup" text="Log In">
                            <VBox.margin>
                               <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
                            </VBox.margin>
@@ -51,7 +51,7 @@
                         <Insets left="5.0" top="20.0" />
                      </HBox.margin>
                   </Text>
-                  <Button mnemonicParsing="false" text="Register">
+                  <Button mnemonicParsing="false" onAction="#handleRegisterClick" text="Register">
                      <HBox.margin>
                         <Insets left="36.0" top="16.0" />
                      </HBox.margin>
@@ -65,12 +65,7 @@
             </HBox>
             <HBox layoutX="-8.0" layoutY="124.0" prefHeight="51.0" prefWidth="262.0">
                <children>
-                  <Button mnemonicParsing="false" text="Forgot Username">
-                     <HBox.margin>
-                        <Insets left="15.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Forgot Password">
+                  <Button mnemonicParsing="false" onAction="#handleForgotPasswordClick" prefHeight="25.0" prefWidth="227.0" text="Forgot Password">
                      <HBox.margin>
                         <Insets left="15.0" top="10.0" />
                      </HBox.margin>
