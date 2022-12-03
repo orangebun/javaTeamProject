@@ -32,24 +32,36 @@ Main Menu
 /*
  Code requirements:
  
- Inheritance: MET by Admins, Customer, Users (classes inherit other classes)
- Encapsulation: wrapping variables & methods together in a single unit (making it private & using providing public setter & getter methods to modify/view the variables)
- Polymorphism: different implementations of a method
- Composition: has-a relationship between objects + implemented using instance variables (declared in class but outside of constructors/methods/blocks)
- Abstract class: essential details are displayed 
- Interfaces: MET by Users
- JDBC:
- RDBMC: MET by MYSQL
- Classes: need at least 4
+ Inheritance: 
+ 	MET by Admins, Customer, Users (classes inherit other classes)
+ Encapsulation: 
+ 	wrapping variables & methods together in a single unit (making it private & using providing public setter & getter methods to modify/view the variables)
+ Polymorphism: 
+ 	different implementations of a method
+ Composition: 
+ 	has-a relationship between objects + implemented using instance variables (declared in class but outside of constructors/methods/blocks)
+ Abstract class: 
+ 	essential details are displayed
+ Interfaces: 
+ 	MET by Users
+ JDBC: 
+ 	met by calling/connecting using jdbc file (i hope)
+ RDBMC: 
+ 	MET by MYSQL
+ Classes: 
+ 	need at least 4
  Proper Comments
  */
 
 /*
  Documentation Requirements:
  
- Length: At least 5 pages
+ Length: 
+ 	At least 5 pages
  Briefly explains requirements + Specifications of project
  Shows class diagram using UML
- Shows the Data Mosel (Tables + Primary Keys + Foreign Keys)
+ Shows the Data Model (Tables + Primary Keys + Foreign Keys)
  Briefly explains functionality and flow of the program  
  */
+
+

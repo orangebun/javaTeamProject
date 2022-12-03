@@ -1,6 +1,6 @@
 package Commons;
 
-public class Admins extends Customer implements Users {
+public class Admins extends Customer implements Users { //inheritance!!
 	public Admins(String firstName, String lastName, String username, String password, String address, String state, 
 			int zip, String country, String email, String securityQ, String securityA, int SSN) {
 		//constructors

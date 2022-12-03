@@ -53,9 +53,8 @@ CREATE TABLE UpdateFlight(
     newDate varchar(25) NOT NULL,
     newTime time NOT NULL,
     FlightID int NOT NULL, 
-	CONSTRAINT UpdateFlight_Flight_fk FOREIGN KEY(FlightID) REFERENCES FlightInfo(FlightID)
+	CONSTRAINT UpdateFlight_Flight_fk FOREIGN KEY(FlightID) REFERENCES FlightInfo(flightID)
 );
-
 
 INSERT INTO FlightInfo(FlightID, FlightNumber, FlightDate, Departure, Destination, Takeoff, Arrival, 
 TotalSeats, FirstClassSeats, BusinessClassSeats, EconomySeats, FirstAvailable, BusinessAvailable, EconomyAvailable, FirstPrice, BusinessPrice, EconomyPrice)
