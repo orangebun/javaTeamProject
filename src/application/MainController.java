@@ -37,7 +37,7 @@ import javafx.scene.image.Image;
 
 public class MainController {
 
-	
+	//no sql is needed here
 	
 	private Stage stage;
 	private Scene scene;
@@ -54,7 +54,7 @@ public class MainController {
 	public void switchToSecurityQuestions(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
+		scene = new Scene(root, 312, 387);
 		stage.setScene(scene);
 		stage.show();
 	}

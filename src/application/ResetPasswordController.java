@@ -33,17 +33,33 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.fxml.FXML;
 
-public class ResetPasswordController {
+public class ResetPasswordController implements Initializable{
 	
-	public TextField answ;
-	public TextField use;
-	public TextField pass1;
-	public TextField pass2;
+	@FXML public TextField answ;
+	@FXML public TextField use;
+	@FXML public TextField pass1;
+	@FXML public TextField pass2;
 	
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	
+	@FXML private ComboBox securityQuestion;
+	
+	public void initialize(URL url, ResourceBundle rb) {
+		
+		String selec1 = "option";
+		String selec2 = "option";
+		
+		//updates security question ComboBox as start with options of selec1 and selec2
+		//We need to pull security questions from sql and place them into selec1 and selec2
+		
+		securityQuestion.getItems().add(selec1);
+		securityQuestion.getItems().add(selec2);
+	}
+	
 	
 	public void switchToSplashScreen(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
@@ -62,9 +78,33 @@ public class ResetPasswordController {
 	}
 	
 	public void handleResetPassword(ActionEvent event){
+		String sqlAnswer;
+		String sqlUserName;
+		String sqlSecurityQuestion;
+		String password1;
+		String password2;
+		
 		boolean login;
 		
-		login = true;
+		//enter sql customer values into corresponding variables
+		
+		password1 = pass1.getText();
+		password2 = pass2.getText();
+		
+		sqlAnswer = "";
+		sqlUserName = "";
+		sqlSecurityQuestion = "";
+		login = false;
+		
+		if(sqlSecurityQuestion.equals(securityQuestion.getValue().toString()) &&
+				sqlUserName.equals(use.getText()) && sqlAnswer.equals(answ.getText()) && 
+				password1.equals(password2)) {
+					
+			// put password1 into sql;
+			login = true;		
+		}
+		
+		
 		
 		if(login) {
 			try {
@@ -72,13 +112,13 @@ public class ResetPasswordController {
 			} catch(IOException ex){
 				System.out.println("shux");
 			}
-		} else {
+		} /*else {
 			try {
 				switchToSplashScreen(event);
 			} catch(IOException ex){
 				System.out.println("shux");
 			}
-		}
+		} I'm not sure we want this else statement */
 	}
 	
 	
@@ -101,5 +141,9 @@ public class ResetPasswordController {
 			}
 		}
 	}
+	
+
+	
+	
 
 }

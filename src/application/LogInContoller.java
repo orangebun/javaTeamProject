@@ -77,8 +77,23 @@ public class LogInContoller {
 		boolean login;
 		String user = TextFieldUser1.getText();
 		String pass = TextFieldPassword1.getText();
+		
+		// We are going to need sql query for username and password
+		
+		String sqlUserNamer;
+		String sqlPassword;
+		
+		sqlUserNamer = "";
+		sqlPassword = "";
+		
+		login = false;
+		
+		if(user.equals(sqlUserNamer) && pass.equals(sqlPassword)) {
+			login = true;
+		}
+		
 		System.out.println(user);
-		login = true;
+		
 		
 		if(login) {
 			try{

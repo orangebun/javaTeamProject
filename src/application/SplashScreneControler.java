@@ -43,9 +43,7 @@ public class SplashScreneControler implements Initializable{
 		//Image im1 = new Image("Main_image.png");
 		//image1.setImage(im1);
 	}
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
+	
 	
 	public Button login;
 	public Button register;
@@ -53,41 +51,41 @@ public class SplashScreneControler implements Initializable{
 	public TextField TextFieldPassword;
 	
 	public void switchToSplashScreen(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
+		Parent root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
 	
 	public void switchToLogIn(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
+		Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
 	
 	public void switchToMainPage(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
+		Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root); 
 		stage.setScene(scene);
 		stage.show();
 	}
 
 	public void switchToRegistration(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Registration.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
+		Parent root = FXMLLoader.load(getClass().getResource("Registration.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
 	
 	public void switchToSecurityQuestions(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
+		Parent root = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
@@ -98,10 +96,15 @@ public class SplashScreneControler implements Initializable{
 		String pass = TextFieldPassword.getText();
 		System.out.println(user);
 		
-		if(user.equals("1234")) {
-			login = false;
-		} else {
+		//we need sql username and password if equals can login
+		
+		String sqlUserName = "";
+		String sqlPassword = "1234";
+		
+		if(user.equals("sqlUserName") && pass.equals(sqlPassword)) {
 			login = true;
+		} else {
+			login = false;
 		}
 		
 		

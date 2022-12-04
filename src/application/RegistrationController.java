@@ -22,6 +22,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.GridPane;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.*;
 import javafx.collections.FXCollections;
@@ -36,7 +37,7 @@ import javafx.scene.image.Image;
 
 
 
-public class RegistrationController {
+public class RegistrationController implements Initializable{
 	
 
 	
@@ -44,15 +45,33 @@ public class RegistrationController {
 	private Scene scene;
 	private Parent root;
 	
-	public TextField user;
-	public TextField pass;
-	public TextField first;
-	public TextField last;
-	public TextField adress;
-	public TextField state;
-	public TextField email;
-	public TextField answer;
-	public TextField zip;
+	@FXML public TextField user;
+	@FXML public TextField pass;
+	@FXML public TextField first;
+	@FXML public TextField last;
+	@FXML public TextField adress;
+	@FXML public TextField state;
+	@FXML public TextField email;
+	@FXML public TextField answer;
+	@FXML public TextField answer2;
+	@FXML public TextField zip;
+	
+	@FXML private ComboBox securityQuestion;
+	@FXML private ComboBox securityQuestion2;
+	
+	public void initialize(URL url, ResourceBundle rb) {
+		String selec1 = "option";
+		String selec2 = "option"; 
+		String selec3 = "option";
+		String selec4 = "option"; 
+		String selec5 = "option";
+		
+		//selec 1 I'm making mandatory since it makes coding easier
+
+		
+		securityQuestion.getItems().addAll(selec1);
+		securityQuestion2.getItems().addAll(selec2, selec3, selec4, selec5);
+	}
 	
 	
 	public void switchToSplashScreen(ActionEvent event) throws IOException {
@@ -76,7 +95,24 @@ public class RegistrationController {
 	
 	//method for the submit registration button
 	public void registrationHandler(ActionEvent event) {
+		
+		
 		if(true) {
+			//return all of these elements to sql database
+			/*
+			 * (String)securityQuestion.getValue()
+			 * (String)securityQuestion2.getValue()
+			 * user.getText();
+			 * pass.getText();
+			 * first.getText();
+			 * last.getText();
+			 * adress.getText();
+			 * state.getText();
+			 * email.getText();
+			 * answer.getText();
+			 * answer2.getText();
+			 * zip.getText();
+			 */
 			backToMainHandler(event);
 		}
 		
