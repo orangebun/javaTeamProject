@@ -74,7 +74,7 @@ public class AccountController implements Initializable{
 		int[] lst = new int[numEntries];
 		
 		for(int i = 0; i < numEntries; i++) {
-			adminSelections.getItems().add(lst[i]);
+			flightSelections.getItems().add(lst[i]);
 		}
 		
 		//check for whether admin or not

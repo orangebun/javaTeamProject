@@ -98,10 +98,10 @@ public class SplashScreneControler implements Initializable{
 		
 		//we need sql username and password if equals can login
 		
-		String sqlUserName = "";
+		String sqlUserName = "abc";
 		String sqlPassword = "1234";
 		
-		if(user.equals("sqlUserName") && pass.equals(sqlPassword)) {
+		if(user.equals(sqlUserName) && pass.equals(sqlPassword)) {
 			login = true;
 		} else {
 			login = false;
