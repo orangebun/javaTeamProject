@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -37,7 +38,7 @@ import javafx.fxml.FXML;
 
 public class ResetPasswordController implements Initializable{
 	
-	@FXML public TextField answ;
+	@FXML public TextArea answ;
 	@FXML public TextField use;
 	@FXML public TextField pass1;
 	@FXML public TextField pass2;
@@ -46,7 +47,7 @@ public class ResetPasswordController implements Initializable{
 	private Scene scene;
 	private Parent root;
 	
-	@FXML private ComboBox securityQuestion;
+	@FXML public ComboBox securityQuestion = new ComboBox();
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		
@@ -56,8 +57,9 @@ public class ResetPasswordController implements Initializable{
 		//updates security question ComboBox as start with options of selec1 and selec2
 		//We need to pull security questions from sql and place them into selec1 and selec2
 		
-		securityQuestion.getItems().add(selec1);
 		securityQuestion.getItems().add(selec2);
+		securityQuestion.getItems().add(selec2);
+
 	}
 	
 	
@@ -96,7 +98,7 @@ public class ResetPasswordController implements Initializable{
 		sqlSecurityQuestion = "";
 		login = false;
 		
-		if(sqlSecurityQuestion.equals(securityQuestion.getValue().toString()) &&
+	/*	if(sqlSecurityQuestion.equals(securityQuestion.getValue().toString()) &&
 				sqlUserName.equals(use.getText()) && sqlAnswer.equals(answ.getText()) && 
 				password1.equals(password2)) {
 					
@@ -104,7 +106,7 @@ public class ResetPasswordController implements Initializable{
 			login = true;		
 		}
 		
-		
+		*/
 		
 		if(login) {
 			try {

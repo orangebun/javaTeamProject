@@ -131,7 +131,7 @@ public class SplashScreneControler implements Initializable{
 		try{
 			switchToSecurityQuestions(event);
 		} catch(IOException ex){
-			System.out.println("Shux");
+			ex.printStackTrace();
 		}
 	}
 	
