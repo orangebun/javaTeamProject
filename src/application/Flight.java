@@ -6,18 +6,19 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Flight {
 	
-	private SimpleStringProperty leavingtime, arriveTime, to, from, day;
+	private SimpleStringProperty leavingTime, arriveTime, to, from, day;
 	private int flightID, cost, flightNum, capacity;
 	
-	public Flight(int flightID, int flightNum, int capacity, int cost, String day, String to, String from, String arriveTime, String leavingtime) {
+	public Flight(int flightID, int flightNum, int capacity, int cost, String day, String to, String from, String arriveTime, String leavingTime) {
+		this.flightID = flightID;
+		this.flightNum = flightNum;
+		this.capacity =capacity;
+		this.cost = cost;
 		this.day = new SimpleStringProperty(day);
-		this.leavingtime = new SimpleStringProperty(leavingtime);
+		this.leavingTime = new SimpleStringProperty(leavingTime);
 		this.arriveTime = new SimpleStringProperty(arriveTime);
 		this.to = new SimpleStringProperty(to);
 		this.from = new SimpleStringProperty(from);
-		this.flightID = flightID;
-		this.cost = cost;
-		this.capacity =capacity;
 	}
 	
 	public String getDay() {
@@ -25,16 +26,16 @@ public class Flight {
 	}
 
 	public void setDay(SimpleStringProperty day) {
-		this.day = leavingtime;
+		this.day = day;
 	}
 
 
-	public String getLeavingtime() {
-		return leavingtime.get();
+	public String getLeavingTime() {
+		return leavingTime.get();
 	}
 
-	public void setLeavingtime(SimpleStringProperty leavingtime) {
-		this.leavingtime = leavingtime;
+	public void setLeavingTime(SimpleStringProperty leavingTime) {
+		this.leavingTime = leavingTime;
 	}
 
 	public String getArriveTime() {
@@ -85,11 +86,11 @@ public class Flight {
 		this.cost = cost;
 	}
 	
-	public int capacity() {
+	public int getCapacity() {
 		return capacity; 
 	}
 
-	public void setcapacity(int capacity) {
+	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
 }

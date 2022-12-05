@@ -13,12 +13,12 @@
   <items>
       <HBox prefHeight="113.0" prefWidth="852.0">
          <children>
-            <Button mnemonicParsing="false" text="Available Flights">
+            <Button mnemonicParsing="false" onAction="#switchToAccount" prefHeight="44.0" prefWidth="188.0" text="Available Flights">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" text="Booked Flights">
+            <Button mnemonicParsing="false" onAction="#switchToBooked" prefHeight="44.0" prefWidth="178.0" text="Booked Flights">
                <font>
                   <Font size="20.0" />
                </font>

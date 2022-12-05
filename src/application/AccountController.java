@@ -62,7 +62,7 @@ public class AccountController implements Initializable{
 		costColumn.setCellValueFactory(new PropertyValueFactory<Flight, Integer> ("cost"));
 		dayColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("day"));
 		toColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("to"));
-		fromColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("From"));
+		fromColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("from"));
 		arriveTimeColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("arriveTime"));
 		leavingTimeColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("leavingTime"));
 		
@@ -97,7 +97,7 @@ public class AccountController implements Initializable{
 	}
 	
 	public ObservableList<Flight> getFlights(){
-		int numRows;
+		//int numRows;
 		
 		//numRows = length of SQL query for initial data
 		
@@ -125,7 +125,7 @@ public class AccountController implements Initializable{
 		return flights;
 	}
 	
-	public ObservableList<Flight> select(EventAction event){
+	/*public ObservableList<Flight> select(EventAction event){
 		
 	}
 	
@@ -141,6 +141,6 @@ public class AccountController implements Initializable{
 		if(adminSelections.getValue().equals("Delete")) {
 			
 		}
-	}
+	} */
 }
  

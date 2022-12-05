@@ -59,6 +59,31 @@ public class MainController {
 		stage.show();
 	}
 	
+	public void switchToAccount(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("Account.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	public void switchToBooked(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("Booking.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	
+	public void handleAvailableFlight(ActionEvent event) {
+		try{
+			switchToSplashScreen(event);
+		} catch(IOException ex){
+			System.out.println("Shux");
+		}
+	}
+	
 	public void handleSignOut(ActionEvent event) {
 		try{
 			switchToSplashScreen(event);

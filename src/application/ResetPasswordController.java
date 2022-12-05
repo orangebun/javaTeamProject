@@ -47,18 +47,17 @@ public class ResetPasswordController implements Initializable{
 	private Scene scene;
 	private Parent root;
 	
-	@FXML public ComboBox securityQuestion = new ComboBox();
+	@FXML private ComboBox securityQuestion;
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		
 		String selec1 = "option";
-		String selec2 = "option";
+		String selec2 = "option2";
 		
 		//updates security question ComboBox as start with options of selec1 and selec2
 		//We need to pull security questions from sql and place them into selec1 and selec2
 		
-		securityQuestion.getItems().add(selec2);
-		securityQuestion.getItems().add(selec2);
+		securityQuestion.getItems().addAll(selec1, selec2);
 
 	}
 	

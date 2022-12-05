@@ -56,8 +56,8 @@ public class RegistrationController implements Initializable{
 	@FXML public TextField answer2;
 	@FXML public TextField zip;
 	
-	@FXML private ComboBox securityQuestion;
-	@FXML private ComboBox securityQuestion2;
+	@FXML private ComboBox securityQuestion = new ComboBox();
+	@FXML private ComboBox securityQuestion2 = new ComboBox();
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		String selec1 = "option";

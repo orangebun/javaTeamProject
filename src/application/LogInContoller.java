@@ -72,6 +72,7 @@ public class LogInContoller {
 		stage.show();
 	}
 	
+	//handles what happens with login should get string from text field checks database if correct
 	
 	public void handleLoginClickPopup(ActionEvent event) {
 		boolean login;
