@@ -88,7 +88,8 @@ public class AccountController implements Initializable{
 		int[] lst = new int[numEntries];
 		
 		for(int i = 0; i < numEntries; i++) {
-			flightSelections.getItems().add(lst[i]);
+			Integer i1 = new Integer(lst[i]);
+			flightSelections.getItems().add(i1.toString());
 		}
 		
 		//check for whether admin or not
@@ -137,7 +138,8 @@ public class AccountController implements Initializable{
 		//Delete below and use for loop in tandem with sql query
 		ObservableList<Flight> flights = FXCollections.observableArrayList();
 		flights.add(new Flight(leavingTimeVar, arriveTimeVar, toVar, fromVar, dayVar, flightIDVar, flightNumVar, capacityVar, costVar));
-		
+        Integer i1 = new Integer(flightIDVar);
+        flightSelections.getItems().add(i1.toString());
 		return flights;
 	}
 	
@@ -213,10 +215,26 @@ public class AccountController implements Initializable{
 		}
 		
 		if(adminSelections.getValue().equals("Delete")) {
-			
+		    {
+		        ObservableList<Flight> selectedRows, allFlights;
+		        allFlights = tableView.getItems();
+		        
+		        //this gives us the rows that were selected
+		        selectedRows = tableView.getSelectionModel().getSelectedItems();
+		        
+		        //loop over the selected rows and remove the Person objects from the table
+		        for (Flight flight: selectedRows)
+		        {
+		        	allFlights.remove(flight);
+		        	Integer i1 = new Integer(flight.getFlightID());
+		        	flightSelections.getItems().remove(i1.toString());
+		        }
+		    }
+		    
+		    
 		}
 	} 
-	
+/*	
 
 	public void bookFlights(ActionEvent event){
 		
@@ -231,6 +249,38 @@ public class AccountController implements Initializable{
 		}
 		
 		
+	}*/
+	
+	public void switchToSplashScreen(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	public void switchToMainPage(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root); 
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	public void handleSignOut(ActionEvent event){
+		try {
+			switchToSplashScreen(event);
+		} catch(IOException ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public void handleBackToMain(ActionEvent event){
+		try {
+			switchToSplashScreen(event);
+		} catch(IOException ex) {
+			ex.printStackTrace();
+		}
 	}
 }
  

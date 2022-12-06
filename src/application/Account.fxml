@@ -32,7 +32,7 @@
             <TextField fx:id="capacityText" promptText="Insert Capacity (admin)" />
             <TextField fx:id="costText" promptText="Insert Cost (admin)" />
             <Region prefHeight="375.0" prefWidth="143.0" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" text="Submit" />
+            <Button mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="158.0" text="Submit" />
          </children>
       </VBox>
    </right>
@@ -63,8 +63,8 @@
       <AnchorPane prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="36.0" fitWidth="854.0" pickOnBounds="true" preserveRatio="true" />
-            <Button layoutX="741.0" layoutY="6.0" mnemonicParsing="false" text="Main" />
-            <Button layoutX="784.0" layoutY="6.0" mnemonicParsing="false" text="Sign Out" />
+            <Button layoutX="741.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleBackToMain" text="Main" />
+            <Button layoutX="784.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleSignOut" text="Sign Out" />
             <TextField fx:id="location" layoutY="6.0" promptText="Where are you " />
             <TextField fx:id="destination" layoutX="149.0" layoutY="6.0" promptText="Where are you going" />
             <Button layoutX="447.0" layoutY="6.0" mnemonicParsing="false" text="Search" />
