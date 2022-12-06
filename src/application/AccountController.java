@@ -34,6 +34,7 @@ import java.util.ResourceBundle;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import javafx.fxml.FXML;
+import java.util.ArrayList;
 
 
 
@@ -49,12 +50,24 @@ public class AccountController implements Initializable{
 	@FXML private TableColumn<Flight, String> arriveTimeColumn;
 	@FXML private TableColumn<Flight, String> leavingTimeColumn;
 	
-	@FXML private ComboBox flightSelections;
-	@FXML private ComboBox adminSelections;
+	@FXML private ComboBox<String> flightSelections;
+	@FXML private ComboBox<String> adminSelections;
 	
 	@FXML private TextField location;
 	@FXML private TextField destination;
 	@FXML private TextField flightIDSearch;
+	
+	
+	@FXML private TextField toText;
+	@FXML private TextField fromText;
+	@FXML private TextField departureText;
+	@FXML private TextField arrivalText;
+	@FXML private TextField dayText;
+	@FXML private TextField flightIDText;
+	@FXML private TextField flightNumText;
+	@FXML private TextField capacityText;
+	@FXML private TextField costText;
+	
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		flightIDColumn.setCellValueFactory(new PropertyValueFactory<Flight, Integer> ("flightID"));
@@ -70,8 +83,8 @@ public class AccountController implements Initializable{
 		tableView.setItems(getFlights());
 		
 		// needs to display applicable flight numbers shown to what was initialized on screen
-		/*
-		int numEntries = 3;
+		
+		int numEntries = 10;
 		int[] lst = new int[numEntries];
 		
 		for(int i = 0; i < numEntries; i++) {
@@ -94,12 +107,14 @@ public class AccountController implements Initializable{
 			adminSelections.getItems().addAll(selec1);
 		}
 		
-		*/
+		
 	}
 	
 	public ObservableList<Flight> getFlights(){
-		//int numRows;
+		int numRows;
 		
+		
+		numRows = 10;
 		//numRows = length of SQL query for initial data
 		
 		//use loop to add values use sql query in loop to set vars
@@ -126,22 +141,96 @@ public class AccountController implements Initializable{
 		return flights;
 	}
 	
-	/*public ObservableList<Flight> select(EventAction event){
-		
-	}
-	
+
 	public void submit(ActionEvent event){
 		if(adminSelections.getValue().equals("Book")) {
 			
 		}
 		
 		if(adminSelections.getValue().equals("Add")) {
-			
+			{
+					
+				int flightIDVar;
+				int flightNumVar;
+				int capacityVar;
+				double costVar;
+				String dayVar;
+				String toVar;
+				String fromVar;
+				String arriveTimeVar;
+				String leavingTimeVar;
+				
+				flightIDVar = 0;
+				flightNumVar = 0;
+				capacityVar = 0;
+				costVar = 0;
+				
+		       
+		        try{
+		        	flightIDVar = Integer.parseInt(flightIDText.getText());
+		        }
+		        catch (NumberFormatException ex){
+		            ex.printStackTrace();
+		        }
+		        
+		        try{
+		        	flightNumVar = Integer.parseInt(flightNumText.getText());
+		        }
+		        catch (NumberFormatException ex){
+		            ex.printStackTrace();
+		        }
+		        
+		        try{
+		        	capacityVar = Integer.parseInt(capacityText.getText());
+		        }
+		        catch (NumberFormatException ex){
+		            ex.printStackTrace();
+		        }
+		        
+		        try{
+		        	costVar = Integer.parseInt(costText.getText());
+		        }
+		        catch (NumberFormatException ex){
+		            ex.printStackTrace();
+		        }
+		        
+		        
+				toVar =  toText.getText();
+				fromVar = fromText.getText();
+				leavingTimeVar = departureText.getText();
+				arriveTimeVar =  arrivalText.getText();
+				dayVar = dayText.getText();
+				
+				
+		        if(leavingTimeVar !="" && arriveTimeVar !="" && toVar !="" && fromVar !="" && dayVar !="" && flightIDVar !=0 && flightNumVar !=0 && capacityVar !=0 && costVar!=0) {
+			        Flight newFlight = new Flight(leavingTimeVar, arriveTimeVar, toVar, fromVar, dayVar, flightIDVar, flightNumVar, capacityVar, costVar);
+			        tableView.getItems().add(newFlight);
+			        Integer i1 = new Integer(flightIDVar);
+			        flightSelections.getItems().add(i1.toString());
+		        }
+
+		    }
 		}
 		
 		if(adminSelections.getValue().equals("Delete")) {
 			
 		}
-	} */
+	} 
+	
+
+	public void bookFlights(ActionEvent event){
+		
+		String bookSelection = adminSelections.getValue();
+		
+		Flight f1 = new Flight();
+		
+		ArrayList<String> arrList = new ArrayList<>();
+		
+		for(int i = 0; i < tableView.getItems().size(); i++) {
+			product = tableView.getItems().get(i);
+		}
+		
+		
+	}
 }
  

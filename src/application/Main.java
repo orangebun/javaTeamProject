@@ -34,7 +34,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Pre.fxml"));
 			Scene scene1 = new Scene(root, 854,480);
 			scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			Image icon = new Image("Icon1.png");

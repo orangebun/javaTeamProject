@@ -35,5 +35,19 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 
 public class PreController {
+	public void switchToSplashScreen(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("SplashScreen.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 	
+	public void handleButton(ActionEvent event){
+		try {
+			switchToSplashScreen(event);
+		} catch(IOException ex){
+			ex.printStackTrace();
+		}
+	}
 }

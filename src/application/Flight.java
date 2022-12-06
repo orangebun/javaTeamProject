@@ -46,6 +46,10 @@ public class Flight {
 	public SimpleDoubleProperty cost;
 	
 	
+	public Flight() {
+
+	}
+	
 	public Flight(String leavingTime, String arriveTime, String to, String from, String day, int flightID,
 			int flightNum, int capacity, double cost) {
 		this.leavingTime = new SimpleStringProperty(leavingTime);

@@ -78,6 +78,7 @@ public class ResetPasswordController implements Initializable{
 		stage.show();
 	}
 	
+	
 	public void handleResetPassword(ActionEvent event){
 		String sqlAnswer;
 		String sqlUserName;

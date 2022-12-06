@@ -129,7 +129,7 @@ public class SplashScreneControler implements Initializable{
 	
 	public void handlePasswordReset(ActionEvent event) {
 		try{
-			switchToSecurityQuestions(event);
+			switchToRegistration(event);
 		} catch(IOException ex){
 			ex.printStackTrace();
 		}

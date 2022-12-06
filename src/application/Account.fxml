@@ -11,33 +11,47 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountController">
    <right>
-      <VBox prefHeight="444.0" prefWidth="121.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="444.0" prefWidth="143.0" BorderPane.alignment="CENTER">
          <children>
             <ComboBox fx:id="flightSelections" prefWidth="150.0" promptText="Flights" />
-            <Region prefHeight="375.0" prefWidth="108.0" />
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="124.0" text="Submit" />
+            <TextField fx:id="toText" promptText="Insert Destination (admin)">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="fromText" promptText="Insert Location (admin)" />
+            <TextField fx:id="departureText" promptText="Insert Deprture (admin)" />
+            <TextField fx:id="arrivalText" promptText="Insert Arrival (admin)" />
+            <TextField fx:id="dayText" promptText="Insert day (admin)" />
+            <TextField fx:id="flightIDText" promptText="Insert Flight ID (admin)" />
+            <TextField fx:id="flightNumText" promptText="Insert Flight # (admin)" />
+            <TextField fx:id="capacityText" promptText="Insert Capacity (admin)" />
+            <TextField fx:id="costText" promptText="Insert Cost (admin)" />
+            <Region prefHeight="375.0" prefWidth="143.0" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" text="Submit" />
          </children>
       </VBox>
    </right>
    <center>
-      <TitledPane animated="false" collapsible="false" prefHeight="442.0" prefWidth="754.0" text="Flight Information" BorderPane.alignment="CENTER">
+      <TitledPane animated="false" collapsible="false" prefHeight="442.0" prefWidth="678.0" text="Flight Information" BorderPane.alignment="CENTER">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="752.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="715.0">
                <children>
-                  <TableView fx:id="tableView" layoutY="8.0" prefHeight="414.0" prefWidth="734.0">
+                  <TableView fx:id="tableView" layoutY="8.0" prefHeight="414.0" prefWidth="708.0">
                     <columns>
                       <TableColumn fx:id="flightIDColumn" prefWidth="53.0" text="Flight ID" />
                         <TableColumn fx:id="flightNumColumn" prefWidth="62.0" text="Flight #" />
                         <TableColumn fx:id="capacityColumn" prefWidth="62.0" text="Capacity" />
-                        <TableColumn fx:id="costColumn" prefWidth="54.0" text="Cost" />
-                        <TableColumn fx:id="dayColumn" prefWidth="139.0" text="day" />
-                      <TableColumn fx:id="toColumn" prefWidth="112.0" text="To" />
-                        <TableColumn fx:id="fromColumn" prefWidth="104.0" text="From" />
-                        <TableColumn fx:id="leavingTimeColumn" prefWidth="74.0" text="Departure" />
-                        <TableColumn fx:id="arriveTimeColumn" prefWidth="73.0" text="Arrival" />
+                        <TableColumn fx:id="costColumn" prefWidth="66.0" text="Cost" />
+                        <TableColumn fx:id="dayColumn" prefWidth="96.0" text="day" />
+                      <TableColumn fx:id="toColumn" prefWidth="113.0" text="To" />
+                        <TableColumn fx:id="fromColumn" prefWidth="103.0" text="From" />
+                        <TableColumn fx:id="leavingTimeColumn" prefWidth="83.0" text="Departure" />
+                        <TableColumn fx:id="arriveTimeColumn" text="Arrival" />
                     </columns>
                   </TableView>
                </children>
