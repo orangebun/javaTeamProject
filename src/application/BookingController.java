@@ -136,7 +136,7 @@ public class BookingController implements Initializable{
 	
 	public void handleBackToMain(ActionEvent event){
 		try {
-			switchToSplashScreen(event);
+			switchToMainPage(event);
 		} catch(IOException ex) {
 			ex.printStackTrace();
 		}
