@@ -8,9 +8,8 @@ public class Booking extends Flight {
 	public Booking() {}
 	
 	public Booking(int flightID, int flightNum, String flightDay, String to, String from, String leavingTime, String arriveTime, int totCapacity,
-    		int firstClassCap, int businessClassCap, int economyCap, int firstLeft, int economyLeft, int firstCost, int businessCost, int economyCost) {
-		super (flightID, flightNum,flightDay, to, from, leavingTime, arriveTime, totCapacity,
-    		firstClassCap, businessClassCap, economyCap, firstLeft, economyLeft, firstCost, businessCost, economyCost);
+    		int seatsLeft, float Price) {
+		super (flightID, flightNum, flightDay, to, from, leavingTime, arriveTime, totCapacity, seatsLeft, Price);
 		this.confirmNum = confirmNum;
 		this.timeBooked = new Date().getTime();
 		this.bookingStatus = "Confirmed";	
