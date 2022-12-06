@@ -36,12 +36,13 @@ import javafx.scene.image.Image;
 import javafx.fxml.FXML;
 
 
+
 public class AccountController implements Initializable{
 	@FXML private TableView<Flight> tableView;
 	@FXML private TableColumn<Flight, Integer> flightIDColumn;
 	@FXML private TableColumn<Flight, Integer> flightNumColumn;
 	@FXML private TableColumn<Flight, Integer> capacityColumn;
-	@FXML private TableColumn<Flight, Integer> costColumn;
+	@FXML private TableColumn<Flight, Double> costColumn;
 	@FXML private TableColumn<Flight, String> dayColumn;
 	@FXML private TableColumn<Flight, String> toColumn;
 	@FXML private TableColumn<Flight, String> fromColumn;
@@ -59,7 +60,7 @@ public class AccountController implements Initializable{
 		flightIDColumn.setCellValueFactory(new PropertyValueFactory<Flight, Integer> ("flightID"));
 		flightNumColumn.setCellValueFactory(new PropertyValueFactory<Flight, Integer> ("flightNum"));
 		capacityColumn.setCellValueFactory(new PropertyValueFactory<Flight, Integer> ("capacity"));
-		costColumn.setCellValueFactory(new PropertyValueFactory<Flight, Integer> ("cost"));
+		costColumn.setCellValueFactory(new PropertyValueFactory<Flight, Double> ("cost"));
 		dayColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("day"));
 		toColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("to"));
 		fromColumn.setCellValueFactory(new PropertyValueFactory<Flight, String> ("from"));
@@ -69,7 +70,7 @@ public class AccountController implements Initializable{
 		tableView.setItems(getFlights());
 		
 		// needs to display applicable flight numbers shown to what was initialized on screen
-		
+		/*
 		int numEntries = 3;
 		int[] lst = new int[numEntries];
 		
@@ -93,7 +94,7 @@ public class AccountController implements Initializable{
 			adminSelections.getItems().addAll(selec1);
 		}
 		
-		
+		*/
 	}
 	
 	public ObservableList<Flight> getFlights(){
@@ -109,10 +110,10 @@ public class AccountController implements Initializable{
 		}
 		*/
 		
-		Integer flightIDVar = 1;
-		Integer flightNumVar = 1;
-		Integer capacityVar = 1;
-		Integer costVar = 1;
+		int flightIDVar = 1;
+		int flightNumVar = 1;
+		int capacityVar = 1;
+		double costVar = 1;
 		String dayVar = "4/25/2022";
 		String toVar = "Atlanta";
 		String fromVar = "Chicago";
@@ -120,7 +121,7 @@ public class AccountController implements Initializable{
 		String leavingTimeVar = "2:00 PM";
 		//Delete below and use for loop in tandem with sql query
 		ObservableList<Flight> flights = FXCollections.observableArrayList();
-		flights.add(new Flight(flightIDVar, flightNumVar, capacityVar, costVar, dayVar, toVar, fromVar, arriveTimeVar, leavingTimeVar));
+		flights.add(new Flight(leavingTimeVar, arriveTimeVar, toVar, fromVar, dayVar, flightIDVar, flightNumVar, capacityVar, costVar));
 		
 		return flights;
 	}
