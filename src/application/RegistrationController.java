@@ -82,6 +82,7 @@ public class RegistrationController implements Initializable{
 		stage.show();
 	}
 	
+	
 	//method for Back to Main button
 	public void backToMainHandler(ActionEvent event) {
 		
@@ -92,6 +93,8 @@ public class RegistrationController implements Initializable{
 		}
 
 	}
+	
+
 	
 	//method for the submit registration button
 	public void registrationHandler(ActionEvent event) {
