@@ -1,21 +1,22 @@
 package Database;
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.*;
  
-//checks against the database for passwords & usernames and flights
+//tries to connect to database
 
 public class ConnectionCheck {
-	public static void main(String[] args)
-			throws SQLException, ClassNotFoundException {
-		//Load the JDBC driver
-		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("Driver loaded");
-		
-		//Connect to the database!!
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaAir", "root", "root");
-			System.out.println("Database Connected!");
-		
-		//connection.close();
-	}	
+	public static Connection getConnection() throws Exception{
+		try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/3306","root","root");
+		return connection;
+		}catch(Exception e) {
+			System.out.print(e);
+		}
+		return null;
+	}
 	
 }
+
+
+
